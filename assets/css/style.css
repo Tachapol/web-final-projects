@@ -1,0 +1,276 @@
+/* Table of Content */
+
+/* 
+1. Section Settings 
+2. Section Carousel
+3. Section Condo
+4. Section Footer
+5. Section Navbar
+6. Section Page-Title
+8. Section Profile
+
+card
+
+Colors
+0d3b66-faf0ca-f7e294-f4d35e-ee964b
+#D3BB68#F8BA00#FBF8CF#9F8E4E
+#FF909F#71CCFF#002443#202020
+
+#132743
+#407088
+#70ADB5
+#FFCBCB
+*/
+
+/* Section Settings */
+    html, body{
+        height: 100%;
+    }
+
+
+    .bg-alpha{
+        background: rgb(0,0,0,0.5);
+    }
+
+    .border-short-botton{
+        position: relative;
+        padding: 20px 0;
+
+    }
+
+    .border-short-botton::after{
+        position: absolute;
+        content: "";
+        width: 100px;
+        background : rgb(0, 0, 0);
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        margin-left: -50px;
+        background: #595959;
+    }
+
+    /* Section Carousel */
+        .carousel,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-inner .active{
+            height: 100%;
+        }
+
+        .carousel-img{
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-caption{
+            top: 40%;
+        }
+
+        .backscreen{
+            background: rgb(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+            
+        }
+    /* Section Condo */
+
+    .card-caption{
+        border-radius: 15px !important;
+        box-shadow: 0px 0px 20px rgb(208 207 207);
+    }
+    .card-rent{
+        height: 100%;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 0px 0px 20px rgb(208 207 207);
+    }
+
+    .card-lyp{
+        height: 200px;
+        border-radius: 40px 40px 40px 40px;
+    }
+
+    .img-card{
+        border-radius: 20px 20px 0 0;
+    }
+
+    .img-card-bottom{
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .warpper-card-img{
+        position: relative;
+        padding-top: 56.25%;
+        overflow: hidden;
+    }
+
+    .warpper-card-img img{
+        position: absolute;
+        top: 0; 
+        transition: 0.5s;
+    }
+
+    .warpper-card-img img:hover{
+        transform: scale(1.1);
+    }
+
+    .btn-viewmore{
+        color: #fff;
+        background-color: #000;
+        border-radius: 20px;
+    }
+
+    .btn-submit{
+        border-radius: 20px;
+    }
+
+
+    .btn-group-custom button{
+        margin-bottom: 0.5rem;
+        width: 100px;
+    }
+
+    .btn-group-custom a:hover{
+        text-decoration: none!important;
+    }
+       
+    .price{
+        color:#d9272e;
+        font-size: 1.2em;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .blog-content{
+        padding: 50px 100px;
+        box-shadow: 0px 0px 10px #a5a5a5;
+    }
+
+    @media (max-width: 991px) {
+        .blog-content{
+            padding: 40px 50px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .blog-content{
+            padding: 20x 15px;
+        }
+    }
+
+    .owl-carousel .card-body{
+        height: 150px;
+        overflow: hidden;
+    }
+
+/* Section Footer */
+
+    .semi-footer{
+        background-color: #132743;
+        color: #fff;
+    }
+
+    .semi-footer a{
+        color: #fff;
+    }
+
+    .semi-footer h4{
+        color: #fff;
+        border-bottom: 1px solid;
+        padding: 10px;
+    }
+
+    .footer{
+        background: #000;
+        color: #fff;
+        font-size: 0.7rem;
+        height: 20px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .logo{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        padding: 0%;
+        border-radius: 50%;
+    }
+
+    /* Section Navbar */
+        .navbar {
+            padding: 25px;
+            transition: 0.5s;
+        }
+
+        .bg-blue {
+            background-color: #132743;
+        }
+
+
+    /* Section Page-Title */
+    .page-image{
+        padding: 200px 0px 120px;
+        text-align: center;
+        color: #fff;
+        background: rgb(0, 0, 0, 0.5);
+    }
+
+    .page-step{
+        padding: 200px 0px 120px;
+        text-align: center;
+        color: #fff;
+        background: rgb(0, 0, 0, 0.5);
+    }
+
+    /* Section Profile */
+    .profile img {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgb(54, 52, 52);
+      }
+      
+      .no-highlight{
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+      }    
+
+      .prompt{
+        font-family: Prompt ,sans-serif;
+      }
+
+      .elementor-img {
+        height: auto;
+        max-width: 100%;
+        border: none;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .elementor-animation-grow {
+        transition-duration: .3s;
+        transition-property: transform;
+    }
+
+    .elementor-widget-image .elementor-image img {
+        vertical-align: middle;
+        display: inline-block;
+    }
+    
+    .elementor-animation-grow:active, .elementor-animation-grow:focus, .elementor-animation-grow:hover {
+        transform: scale(1.1);
+    }
+
+    .responsive-img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        justify-content: center;
+    }
