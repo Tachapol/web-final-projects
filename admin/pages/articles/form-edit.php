@@ -111,37 +111,25 @@ $arrTag = explode(',', $row['tag']);
             <input type="text" class="form-control" id="details_th" name="details_th" value="<?php echo $row['details_th']?>" required>
           </div>
           
-          <!-- <div class="form-group col-md-3">
-            <label for="room_size">Room Size</label>
-            <input type="text" class="form-control" id="room_size" name="room_size" value="<?php echo $row['room_size']?>" required>
+          <div class="form-group col-md-3">
+            <label for="size">Room Size</label>
+            <input type="number" class="form-control" id="size" name="size" placeholder="" required>
           </div>
           
           <div class="form-group col-md-3">
             <label for="bedroom">Bedroom</label>
-            <select class="form-control" id="bedroom" name="bedroom">
-              <option value="1" <?php echo in_array('1', $arrTag) ? 'selected' : ''; ?> >1</option>
-              <option value="2" <?php echo in_array('2', $arrTag) ? 'selected' : ''; ?> >2</option>
-              <option value="3" <?php echo in_array('3', $arrTag) ? 'selected' : ''; ?> >3</option>
-              <option value="4" <?php echo in_array('4', $arrTag) ? 'selected' : ''; ?> >4</option>
-              <option value="5" <?php echo in_array('5', $arrTag) ? 'selected' : ''; ?> >5</option>
-            </select>
+            <input type="number" class="form-control" id="bedroom" name="bedroom" value="<?php echo $row['bedroom']?>" required>
           </div>
           
           <div class="form-group col-md-3">
             <label for="bathroom">Bathroom</label>
-            <select class="form-control" id="bathroom" name="bathroom">
-              <option value="1" <?php echo in_array('1', $arrTag) ? 'selected' : ''; ?>>1</option>
-              <option value="2" <?php echo in_array('2', $arrTag) ? 'selected' : ''; ?>>2</option>
-              <option value="3" <?php echo in_array('3', $arrTag) ? 'selected' : ''; ?>>3</option>
-              <option value="4" <?php echo in_array('4', $arrTag) ? 'selected' : ''; ?>>4</option>
-              <option value="5" <?php echo in_array('5', $arrTag) ? 'selected' : ''; ?>>5</option>
-            </select>
+            <input type="number" class="form-control" id="bathroom" name="bathroom" value="<?php echo $row['bathroom']?>" required>
           </div>
           
           <div class="form-group col-md-3">
             <label for="price">Price</label>
-            <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price']?>" required>
-          </div> -->
+            <input type="number" class="form-control" id="price" name="price" value="<?php echo $row['price']?>" required>
+          </div>
           
           <div class="form-group col-sm-6">
             <label>Cover Photo</label>
@@ -206,10 +194,6 @@ $arrTag = explode(',', $row['tag']);
         <select class="form-control select2" name="tag[]" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;">
           <option value="sale" <?php echo in_array('sale', $arrTag) ? 'selected' : ''; ?> >Sale</option>
           <option value="rent" <?php echo in_array('rent', $arrTag) ? 'selected' : ''; ?> >Rent</option>
-          <option value="plum" <?php echo in_array('plum', $arrTag) ? 'selected' : ''; ?> >Plum</option>
-          <option value="kave" <?php echo in_array('kave', $arrTag) ? 'selected' : ''; ?> >Kave</option>
-          <option value="common" <?php echo in_array('common', $arrTag) ? 'selected' : ''; ?> >Common TU</option>
-          <option value="dcondo" <?php echo in_array('dcondo', $arrTag) ? 'selected' : ''; ?>>D Condo</option>
         </select>
       </div>
     </div>

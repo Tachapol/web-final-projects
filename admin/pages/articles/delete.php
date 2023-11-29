@@ -12,10 +12,10 @@
         $result = $conn->query($sql);
 
         if ( $conn->affected_rows) {
-            echo '<script> alert("Finished Deleting!")</script>'; 
+            echo '<script> alert("Successfully deleted")</script>'; 
             header('Refresh:0; url=index.php');
         } else {
-            echo '<script> alert("Deleting Failed!")</script>'; 
+            echo '<script> alert("Delete failed")</script>'; 
             header('Refresh:0; url=index.php');
             } 
         } else {

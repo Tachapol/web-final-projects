@@ -1,3 +1,13 @@
+<?php 
+    require_once('php/connect.php');
+    $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
+    $sql = "SELECT * FROM `condo` WHERE `tag` LIKE '%".$tag."%' AND `status` = 'true' ORDER BY RAND() LIMIT 6";
+    $result = $conn->query($sql);
+    if (!$result){
+        header('Location: index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +18,7 @@
 
     <!-- COMMON TAGS -->
         <meta charset="utf-8">
-        <title>รวมคอนโดให้เช่า</title>
+        <title>Condo for rent</title>
         <!-- Search Engine -->
         <meta name="description" content="รวมคอนโดให้เช่าโดยพี่เดียร์พี่โบว์">
         <meta name="image" content="https://rentdbcondo.com/assets/images/components/seo1.png">
@@ -54,8 +64,8 @@
         box-shadow: 0px 0px 10px rgb(54, 52, 52);
       }
     </style>
- 
 </head>
+
 <body class="no-highlight">
 
 <!-- Section navbar -->
@@ -138,121 +148,44 @@
           <span class="sr-only">Next</span>
         </a>
     </section>
-    
-<!-- Section Quote -->
-    <div class="container text-center">
-        <div class="row">
-            <div class="card card-caption mx-3 mt-3">
-                <div class="p-4">
-                    <h4>If you are looking  best condo near Bangkok University and Thammasat University</h4>
-                    <hr>
-                    <h5>easy to rent with our varies options suitable room for you also centrally located in downtown with fast & easy access to major universities. <br>
-                        Condo / Apartment for Rent near Thammasat University and Bangkok University <br>
-                        Plum Alive , Plum park , Plum fresh , Kave Town & Kave town space Condo , Kave shift, Kave TU , Decomdo , Common TU <br>
-                        •	1-2 bedrooms <br>
-                        •	1 bathroom <br>
-                        •	Price for rent 6000-20000 THB <br>
-                    </h5>
-                </div>
-                <img class="card-img img-card-bottom" src="../assets/images/condo/imageindex.jpg" class="card-img-top">
-            </div>
-        </div>
     </div>	
 
 <!-- Condo -->
-    <section class="container p-5">
-        <h1 class="border-short-botton text-center">SUGGESTION</h1>
+<section class="container p-5">
         <div class="row">
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Condo4Rent.By.Dear/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/16292959351756.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">PLUM CONDO</h3>
-                        <p class="card-text text-center">Plum Alive 1,2</p>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Condo4Rent.By.Dear/" class="btn btn-viewmore">Available room for rent</a>
+        <?php if($result->num_rows){
+            while($row = $result->fetch_assoc()){ ?>
+                <section class="col-12 col-sm-6 col-md-4 p-2">
+                    <div class="card card-rent">
+                        <a href="rent_detail.php?id=<?php echo $row['id']?>" class="warpper-card-img img-card">
+                            <img src="<?php echo $base_path_blog.$row['image']?>" class="card-img" alt="...">
+                        </a>    
+                        <hr>
+                        <div class="card-body  text-center">
+                            <h2 class="card-title"><?php echo $row['name_en']?></h2>
+                            <p class="card-text"><?php echo $row['details_en']?></p>
+                            <p class="card-text"><?php echo $row['bedroom']?></p>
+                            <p class="card-text"><?php echo $row['bathroom']?></p>
+                            <p class="card-text"><?php echo $row['floor']?></p>
+                            <p type="number" class="text-danger text-bold number-separator card-text"><?php echo number_format($row['price']); ?></p>
+                        </div>   
+                        <div class="p-3 text-center">
+                            <hr>
+                            <a href="rent_detail.php?id=<?php echo $row['id']?>" class="btn btn-viewmore">view more</a>
+                        </div>
                     </div>
-                </div>
-            </section>  
+                </section>  
+            <?php }  
+            }else{ ?>
 
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Kave-Space-Kave-Shift-100890941538058/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/16292961073468.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">KAVE</h3>
-                        <p class="card-text text-center">Kave Town Space <br> Kave Shift <br> Kave Town</p>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Kave-Space-Kave-Shift-100890941538058/" class="btn btn-viewmore">Available room for rent</a>
-                    </div>
-                </div>
-            </section> 
-
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Rent-condo-Common-TU-De-condo-Modizlaunch-Rangsit-near-TU-university-137654241801547/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/rentdbcondopage.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">NEAR TU</h3>
-                        <p class="card-text text-center">Common TU <br> D Condo <br> Modizlaunch</p>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Rent-condo-Common-TU-De-condo-Modizlaunch-Rangsit-near-TU-university-137654241801547/" class="btn btn-viewmore">Available room for rent</a>
-                    </div>
-                </div>
-            </section> 
-
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Rent-Plum-fresh-rangsit-Bangkok-university-ปล่อยเช่า-ฝากเช่า-ขาย-172199771589817/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/plumfresh.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">PLUM FRESH</h3>
-                        <p class="card-text text-center"></h5></p>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Rent-Plum-fresh-rangsit-Bangkok-university-ปล่อยเช่า-ฝากเช่า-ขาย-172199771589817/" class="btn btn-viewmore">Available room for rent</a>
-                    </div>
-                </div>
-            </section> 
-
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Rent-Kave-TU-near-Thammasat-U-ให้เช่าคอนโด-ปล่อยเช่า-by-Dear-104704681931215/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/kavetu.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">Kave TU </h3>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Rent-Kave-TU-near-Thammasat-U-ให้เช่าคอนโด-ปล่อยเช่า-by-Dear-104704681931215/" class="btn btn-viewmore">Available room for rent</a>
-                    </div>
-                </div>
+            
+            <section class="col-12 py-5">
+                <p>
+                    <h3 class="text-center">Coming Soon...</h3>
+                </p>
             </section>
-
-            <section class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card card-rent">
-                    <a href="https://www.facebook.com/Rent-condo-AttitudeBe-condo-Rangsit-102368102161159/" class="warpper-card-img img-card">
-                        <img src="../assets/images/condo/attitude.jpg" class="card-img" alt="...">
-                    </a>    
-                    <div class="card-body pb-0">
-                        <h3 class="card-title text-center border-short-botton p-0">Attitude BU/Becondo </h3>
-                    </div>    
-                    <div class="text-center pb-3">
-                        <hr><a href="https://www.facebook.com/Rent-condo-AttitudeBe-condo-Rangsit-102368102161159/" class="btn btn-viewmore">Available room for rent</a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </section>
+        <?php } ?>   
+    </section>     
     
     <!-- Footer -->
     <?php include_once('includes/footer.php')?>
@@ -262,38 +195,7 @@
     <script src="../node_modules\popper.js\dist\umd\popper.min.js"></script>
     <script src="../node_modules/jarallax/dist\jarallax.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script>
-        const modal = document.getElementById("imgModal");
-        const imgages = document.querySelectorAll(".gallery_img");
-        const modalImg = document.querySelector(".modal-content");
-
-        function getImages() {
-        imgages.forEach((src, index) => {
-            src.src = `/images/${index + 1}.jpg`;
-        });
-        }
-
-        getImages();
-
-        imgages.forEach((image) => {
-        image.onclick = function () {
-            // console.log(this.src);
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        };
-        });
-
-        // Get the <span> element that closes the modal
-        const span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-        modal.style.display = "none";
-        };
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/easy-number-separator.js"></script>
 </body>
 </html>

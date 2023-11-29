@@ -16,7 +16,6 @@
     if($result_RAND->num_rows > 0){
         $row_RAND = $result_RAND->fetch_assoc();
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -138,11 +137,5 @@
     <script src="../node_modules\popper.js\dist\umd\popper.min.js"></script>
     <script src="../node_modules/jarallax/dist\jarallax.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.jsproperty=6087f71a1c89ef00186c3dec&product=sticky-share-buttons' async='async'></script>
-
 </body>
 </html>

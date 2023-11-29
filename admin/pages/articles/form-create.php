@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Articles Management</title>
-  <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="../../dist/img/favicons/apple-touch-icon.png">
@@ -95,34 +94,22 @@
               <input type="text" class="form-control" id="details_th" name="details_th" placeholder="" required>
             </div>
 
-            <!-- <div class="form-group col-md-3">
-              <label for="room_size">Room Size</label>
-              <input type="text" class="form-control" id="room_size" name="room_size" placeholder="" required>
+            <div class="form-group col-md-3">
+              <label for="size">Room Size</label>
+              <input type="number" class="form-control" id="size" name="size" placeholder="" required>
             </div>
             <div class="form-group col-md-3">
               <label for="bedroom">Bedroom</label>
-              <select class="form-control" id="bedroom" name="bedroom">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <input type="number" class="form-control" id="bedroom" name="bedroom" placeholder="" required>
             </div>
             <div class="form-group col-md-3">
               <label for="bathroom">Bathroom</label>
-              <select class="form-control" id="bathroom" name="bathroom">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <input type="number" class="form-control" id="bathroom" name="bathroom" placeholder="" required>
             </div>
             <div class="form-group col-md-3">
               <label for="price">Price</label>
-              <input type="text" class="form-control" id="price" name="price" placeholder="" required>
-            </div> -->
+              <input type="number" class="form-control" id="price" name="price" placeholder="" required>
+            </div>
 
             <div class="form-group col-sm-6">
               <label>Upload Image</label>
@@ -182,10 +169,6 @@
               <select class="form-control select2" name="tag[]" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;">
                 <option value="sale">Sale</option>
                 <option value="rent">Rent</option>
-                <option value="plum">Plum</option>
-                <option value="kave">Kave</option>
-                <option value="common">Common TU</option>
-                <option value="dcondo">D Condo</option>
               </select>
             </div>
           </div>

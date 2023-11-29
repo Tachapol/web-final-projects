@@ -66,6 +66,8 @@
                 </section>  
             <?php }  
             }else{ ?>
+
+            
             <section class="col-12 py-5">
                 <p>
                     <h3 class="text-center">Coming Soon...</h3>

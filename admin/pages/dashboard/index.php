@@ -83,27 +83,31 @@ $result_cont = $conn->query($sql_cont);
           <div class="col-lg-6 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><?php echo $result_art->num_rows; ?></h3>
-                <p>New Articles</p>
+                <a href="../articles">
+                  <h3><?php echo $result_art->num_rows; ?></h3>
+                  <p>New Articles</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="../articles" class="mx-0 small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </a>
               </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="../articles" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-          </div>
-          <div class="col-lg-6 col-6">
+            <div class="col-lg-6 col-6">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><?php echo $result_cont_count->num_rows; ?></h3>
-
-                <p>All Contacts</p>
+                <a href="../contacts">
+                  <h3><?php echo $result_cont_count->num_rows; ?></h3>
+    
+                  <p>All Contacts</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="../contacts" class="mx-0 small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </a>
               </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="../contacts" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
           </div>
         </div>
         <!-- /.row -->

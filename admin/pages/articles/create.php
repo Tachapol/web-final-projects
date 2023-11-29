@@ -15,32 +15,16 @@
         $new_name = round(microtime(true)*9999) . '.' . end($temp);
         $url_upload = '../../../assets/images/condo/'.$new_name;
 
-// 
-        // if ( move_uploaded_file($_FILES['file']['tmp_name'], $url_upload) ){
-        //     $sql = "INSERT INTO `condo` (`name_en`, `name_th`, `details_en`, `details_th`, `room_size`, `bedroom`, `bathroom`, `price`, `text_en`, `text_th`,`tag`, `status`, `image`, `updated_at`, `created_at`) 
-        //             VALUES ('".$_POST['name_en']."',
-        //                     '".$_POST['name_th']."' , 
-        //                     '".$_POST['details_en']."' , 
-        //                     '".$_POST['details_th']."' , 
-        //                     '".$_POST['room_size']."' , 
-        //                     '".$_POST['bedroom']."' , 
-        //                     '".$_POST['bathroom']."' , 
-        //                     '".$_POST['price']."' ,
-        //                     '".$text_en."',
-        //                     '".$text_th."',
-        //                     '".$tag."',
-        //                     '".$status."',
-        //                     '".$new_name."',
-        //                     '".date('Y-m-d H:i:s')."', 
-        //                     '".date('Y-m-d H:i:s')."')";
-        // $result = $conn->query($sql) or die($conn->error);
-// 
         if ( move_uploaded_file($_FILES['file']['tmp_name'], $url_upload) ){
-            $sql = "INSERT INTO `condo` (`name_en`, `name_th`, `details_en`, `details_th`, `text_en`, `text_th`,`tag`, `status`, `image`, `updated_at`, `created_at`) 
+            $sql = "INSERT INTO `condo` (`name_en`, `name_th`, `details_en`, `details_th`, `size`, `bedroom`, `bathroom`, `price`, `text_en`, `text_th`,`tag`, `status`, `image`, `updated_at`, `created_at`) 
                     VALUES ('".$_POST['name_en']."',
                             '".$_POST['name_th']."' , 
                             '".$_POST['details_en']."' , 
                             '".$_POST['details_th']."' , 
+                            '".$_POST['size']."' , 
+                            '".$_POST['bedroom']."' , 
+                            '".$_POST['bathroom']."' , 
+                            '".$_POST['price']."' , 
                             '".$text_en."',
                             '".$text_th."',
                             '".$tag."',
@@ -53,7 +37,6 @@
             echo '<script> echo alert("Sucessful Upload") </script>';
             header('Refresh:0; url=index.php');
         }
-                    
 
         } else {
             echo 'No';

@@ -1,6 +1,5 @@
 <?php require_once('connect.php'); ?>
 <?php
-
     if(isset($_POST['submit_reset'])){
         $sql = "UPDATE `user` SET `password` WHERE `email` = '".$_POST['password']."' ";
         $result = $conn->query($sql);

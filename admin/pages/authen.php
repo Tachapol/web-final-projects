@@ -10,7 +10,7 @@
 
    if( !isset($_SESSION['authen_id'] ) ){
       header('Location: ../../login.php');  
-   } elseif ( $name == 'moderator' && $_SESSION['status'] == 'moderator'){
+   } else if ( $name == 'moderator' && $_SESSION['status'] == 'moderator'){
             header('Location: ../dashboard/');   
    }
 ?>

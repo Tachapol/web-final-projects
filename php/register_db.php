@@ -1,7 +1,6 @@
 <?php require_once('connect.php') ?>
 <?php
     session_start();
-
     if(isset($_POST['submit'])){
         $sql_check_email = "SELECT * FROM `user` WHERE `email` = '".$_POST['email']."' ";
         $check_email =  $conn->query($sql_check_email) or die($conn->error);

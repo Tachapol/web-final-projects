@@ -12,28 +12,28 @@
         <div class="collapse navbar-collapse" id="navbarKey">
             <ul class="navbar-nav ml-auto text-center">
                 <li class="nav-item <?php echo $file_name == 'index' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/index.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../en/index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <!-- <li class="nav-item <?php echo $file_name == 'sale' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/sale.php">Buy</a>
-                </li> -->
+                <li class="nav-item <?php echo $file_name == 'sale' ? 'active': '' ?>">
+                    <a class="nav-link" href="../en/sale.php">Buy</a>
+                </li>
                 <li class="nav-item <?php echo $file_name == 'rent' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/rent.php">Gallery</a>
+                    <a class="nav-link" href="../en/rent.php">Gallery</a>
                 </li>
                 <li class="nav-item <?php echo $file_name == 'lyp' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/lyp.php">ฝากเช่า</a>
+                    <a class="nav-link" href="../en/lyp.php">ฝากเช่า</a>
                 </li>
                 <li class="nav-item <?php echo $file_name == 'contact' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/contact.php">Contact</a>
+                    <a class="nav-link" href="../en/contact.php">Contact</a>
                 </li>
                 <li class="nav-item <?php echo $file_name == 'contact' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/th/">ไทย <img src="../assets/images/navbar/th.png" width="20" height="20" class="d-inline-block align-center" alt=""></a>
+                    <a class="nav-link" href="../th/">ไทย <img src="../assets/images/navbar/th.png" width="20" height="20" class="d-inline-block align-center" alt=""></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="">|</a>
                 </li>
                 <li class="nav-item <?php echo $file_name == 'contact' ? 'active': '' ?>">
-                    <a class="nav-link" href="https://rentdbcondo.com/en/">ENG<img src="../assets/images/navbar/en.png" width="20" height="20" class="d-inline-block align-center" alt=""></a>
+                    <a class="nav-link" href="../en/">ENG<img src="../assets/images/navbar/en.png" width="20" height="20" class="d-inline-block align-center" alt=""></a>
                 </li>
             </ul>
             </div>  

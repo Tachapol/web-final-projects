@@ -15,6 +15,7 @@
             if( !move_uploaded_file($_FILES['file']['tmp_name'], $url_upload)){
                 echo '<srcipt> alert("Couldn&#8216t Upload. Try again.")</srcipt>';
                 header('Refresh:0; url=index.php');
+                
             }
        } 
        
@@ -23,24 +24,6 @@
         $tag = 'all,' . join(',', $_POST['tag']);
         $status = isset($_POST['status']) ? 'true' : 'false' ;
  
-    // $sql = "UPDATE `condo`
-        //         SET name_en = '".$_POST['name_en']."', 
-        //             name_th = '".$_POST['name_th']."',
-        //             details_en = '".$_POST['details_en']."',
-        //             details_th = '".$_POST['details_th']."',
-        //             room_size = '".$_POST['room_size']."',
-        //             bedroom = '".$_POST['bedroom']."',
-        //             bathroom = '".$_POST['bathroom']."',
-        //             price = '".$_POST['price']."',
-        //             text_en = '".$text_en."',
-        //             text_th = '".$text_th."',
-        //             image = '". $image_name."',
-        //             tag = '".$tag."',
-        //             status = '".$status."',
-        //             updated_at = '".date("Y-m-d H:i:s")."'
-        //             WHERE id = '".$_POST['id']."'";
-    // $result = $conn->query($sql) or die($conn->error); 
-
         $sql = "UPDATE `condo`
                 SET name_en = '".$_POST['name_en']."', 
                     name_th = '".$_POST['name_th']."',
@@ -48,6 +31,10 @@
                     details_th = '".$_POST['details_th']."',
                     text_en = '".$text_en."',
                     text_th = '".$text_th."',
+                    size = '".$size."',
+                    bedroom = '".$bedroom."',
+                    bathroom = '".$bathroom."',
+                    price = '".$price."',
                     image = '". $image_name."',
                     tag = '".$tag."',
                     status = '".$status."',
@@ -55,7 +42,7 @@
                     WHERE id = '".$_POST['id']."'";
         $result = $conn->query($sql) or die($conn->error);
         if($result){
-            echo '<script> alert("Edit sucessful!")</script>';
+            echo '<script> alert("Sucess! Your submission has been saved!")</script>';
             header('Refresh:0; url=index.php');
         }
 

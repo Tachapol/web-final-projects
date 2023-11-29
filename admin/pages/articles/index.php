@@ -51,7 +51,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Articles Management</h1>
+            <h1>Condo Management</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -70,7 +70,7 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title d-inline-block">Contents List</h3>
-          <a href="form-create.php" class="btn btn-primary float-right ">Add Articles +</a href="">
+          <a href="form-create.php" class="btn btn-primary float-right ">Add Condo +</a href="">
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive">
@@ -83,10 +83,10 @@
               <th>NAME (THAI)</th>
               <th>DETAILS (ENG)</th>
               <th>DETAILS (THAI)</th>
-              <!-- <th>SIZE</th>
+              <th>SIZE</th>
               <th>BEDROOM</th>
               <th>BATHROOM</th>
-              <th>PRICE</th> -->
+              <th>PRICE</th>
               <th>TAGS</th>
               <th>Last modified</th>
               <th>Action</th>
@@ -105,10 +105,10 @@
                 <td><?php echo $row['name_th'] ?></td>
                 <td><?php echo $row['details_en'] ?></td>
                 <td><?php echo $row['details_th'] ?></td>
-                <!-- <td><?php echo $row['room_size'] ?></td>
+                <td><?php echo $row['size'] ?></td>
                 <td><?php echo $row['bedroom'] ?></td>
                 <td><?php echo $row['bathroom'] ?></td>
-                <td><?php echo $row['price'] ?></td> -->
+                <td><?php echo $row['price'] ?></td>
                 <td><?php echo $row['tag'] ?></td>
                 <td><?php echo date_format(new DateTime($row['updated_at']), "j F y | H:i")?></td>
                 <td>
